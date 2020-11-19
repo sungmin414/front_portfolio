@@ -13,7 +13,7 @@ document.addEventListener("scroll", () => {
   }
 });
 
-// vabar 메뉴를 탭할 때 스크롤 처리
+// navbar 메뉴를 탭할 때 스크롤 처리
 const navbarMenu = document.querySelector(".navbar__menu");
 navbarMenu.addEventListener("click", (event) => {
   // console.log(event.target.dataset.link);
@@ -22,7 +22,14 @@ navbarMenu.addEventListener("click", (event) => {
   if (link == null) {
     return;
   }
+  navbarMenu.classList.remove("open");
   scrollIntoView(link);
+});
+
+//  Navbar toggle button for samll screen
+const navbarToggleBtn = document.querySelector(".navbar__toggle-btn");
+navbarToggleBtn.addEventListener("click", () => {
+  navbarMenu.classList.toggle("open");
 });
 
 // contact me button on home
